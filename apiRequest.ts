@@ -17,4 +17,4 @@ export async function apiRequest(userQuestion: string) {
         ]
     });
     return completion.choices[0].message;
-};
+}
