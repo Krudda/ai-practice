@@ -1,10 +1,19 @@
 import OpenAI from "openai";
 const openai = new OpenAI();
 
-export async function apiRequest(userQuestion: string) {
+export async function apiRequest({ userQuestion, context }: { userQuestion: string, context: string }) {
     const completion = await openai.chat.completions.create({
         model: "gpt-4o-mini",
         messages: [
+            {
+                "role": "developer",
+                "content": [
+                    {
+                        "type": "text",
+                        "text": context
+                    }
+                ]
+            },
             {
                 "role": "user",
                 "content": [
