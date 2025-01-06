@@ -6,6 +6,6 @@ const userQuestion = "Provide me advise what exercises should I do for my back p
 async function main() {
     const response = await apiRequest({userQuestion, context});
     console.log(response);
-};
+}
 
 main();
